@@ -7,7 +7,7 @@ import { decrement, increment } from "../../slice/counterSlice";
 
 import { Main } from "./styles/page.styles";
 
-export const metadata = {
+const metadata = {
   title: "ClientX - Login",
   description:
     "O ClientX é um sistema para envio de mensagens personalizadas para seus clientes, de forma simples e muito prática você cadastra, agenda e envia mensagens pros seus clientes, com texto personalizado, de forma automática e com a frequencia que desejar.",
@@ -19,6 +19,10 @@ export default function Home() {
 
   return (
     <>
+      <head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+      </head>
       <Main>
         Seu projeto está pronto para iniciar
         <button aria-label="Increment value" onClick={() => dispatch(increment())}>
