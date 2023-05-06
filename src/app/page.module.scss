@@ -1,0 +1,11 @@
+@import "./styles/mixins";
+
+$color-primary: #0070f3;
+
+.main {
+  border: 1px solid $color-primary;
+
+  h1 {
+    @include important-text;
+  }
+}

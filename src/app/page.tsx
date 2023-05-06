@@ -1,38 +1,35 @@
-"use client";
-import Head from "next/head";
+import { LoginButton, LogoutButton, ProfileButton, RegisterButton } from "@/components/buttons.component";
+import { getServerSession } from "next-auth";
 
-import type { RootState } from "./store";
-import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "../../slice/counterSlice";
+import { authOptions } from "./api/auth/[...nextauth]/route";
 
-import { Main } from "./styles/page.styles";
+import { User } from "@/components/user.component";
+import { Navbar } from "@/components/navbar.component";
 
-const metadata = {
-  title: "ClientX - Login",
-  description:
-    "O ClientX é um sistema para envio de mensagens personalizadas para seus clientes, de forma simples e muito prática você cadastra, agenda e envia mensagens pros seus clientes, com texto personalizado, de forma automática e com a frequencia que desejar.",
-};
+import Style from "./page.module.scss";
 
-export default function Home() {
-  const count = useSelector((state: RootState) => state.counter.value);
-  const dispatch = useDispatch();
+export default async function Home() {
+  const session = await getServerSession(authOptions);
 
   return (
-    <>
-      <head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-      </head>
-      <Main>
-        Seu projeto está pronto para iniciar
-        <button aria-label="Increment value" onClick={() => dispatch(increment())}>
-          Increment
-        </button>
-        <span>{count}</span>
-        <button aria-label="Decrement value" onClick={() => dispatch(decrement())}>
-          Decrement
-        </button>
-      </Main>
-    </>
+    <main className={Style.main}>
+      <section>
+        {session ? (
+          <>
+            <Navbar />
+            <div>Olá {JSON.stringify(session?.user?.email)}</div>
+            <div>Session {JSON.stringify(session?.expires)}</div>
+            <ProfileButton />
+            <LogoutButton />
+          </>
+        ) : (
+          <>
+            <LoginButton />
+            <RegisterButton />
+          </>
+        )}
+      </section>
+      <section>{session && <User />}</section>
+    </main>
   );
 }
