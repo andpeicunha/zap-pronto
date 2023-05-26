@@ -1,0 +1,34 @@
+@import "@/app/styles/mixins";
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main";
+    grid-template-rows: 80px 1fr;
+    grid-template-columns: 170px auto;
+
+    @include mobile {
+        grid-template-areas:
+            "sidebar header"
+            "sidebar main";
+        grid-template-rows: 80px auto;
+        grid-template-columns: auto auto;
+    }
+}
+
+.header {
+    grid-area: header;
+    width: 100%;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    width: 100%;
+}
+
+.main {
+    grid-area: main;
+    width: 100%;
+}

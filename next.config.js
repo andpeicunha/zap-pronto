@@ -6,11 +6,17 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-}
-
-module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
-};
-// module.exports = nextConfig
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+      },
+    ],
+  },
+}
+
+module.exports = nextConfig

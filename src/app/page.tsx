@@ -1,35 +1,28 @@
-import { LoginButton, LogoutButton, ProfileButton, RegisterButton } from "@/components/buttons.component";
 import { getServerSession } from "next-auth";
-
+import Image from "next/image";
 import { authOptions } from "./api/auth/[...nextauth]/route";
 
-import { User } from "@/components/user.component";
-import { Navbar } from "@/components/navbar.component";
+import { Navbar } from "@/app/components/navbar";
+import { Dashboard } from "@/app/components/dashboard";
 
-import Style from "./page.module.scss";
+import S from "./page.module.scss";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
 
+  if (!session) {
+    return (
+      <main className={S.main}>
+        <Navbar />
+        <Image src="/logotipo.png" width={577} height={82} alt={""} priority className={S.imgLogo} />
+      </main>
+    );
+  }
+
   return (
-    <main className={Style.main}>
-      <section>
-        {session ? (
-          <>
-            <Navbar />
-            <div>Olá {JSON.stringify(session?.user?.email)}</div>
-            <div>Session {JSON.stringify(session?.expires)}</div>
-            <ProfileButton />
-            <LogoutButton />
-          </>
-        ) : (
-          <>
-            <LoginButton />
-            <RegisterButton />
-          </>
-        )}
-      </section>
-      <section>{session && <User />}</section>
+    <main className={S.mainLogin}>
+
+      <Dashboard />
     </main>
   );
 }

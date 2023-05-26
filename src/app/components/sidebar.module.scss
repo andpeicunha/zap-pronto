@@ -1,0 +1,41 @@
+@import "@/app/styles/mixins";
+
+.sidebarMain {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: $azul-fundo;
+}
+
+.logotipo {
+    padding-top: 2rem;
+    width: 140px;
+    height: auto;
+}
+
+.sidebarMenu {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 60%;
+
+    font-size: $font-size-sm;
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        img {
+            margin-right: 5px;
+        }
+
+    }
+}
