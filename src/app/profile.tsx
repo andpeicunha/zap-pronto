@@ -6,18 +6,11 @@ export default async function Home() {
   console.log(session);
 
   return (
-    <main
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "70vh",
-      }}
-    >
+    <section>
       <div>
         <h1>PROFILE: Server Session</h1>
         <pre>{JSON.stringify(session)}</pre>
       </div>
-    </main>
+    </section>
   );
 }

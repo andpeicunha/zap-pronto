@@ -2,12 +2,12 @@
 
 .sidebarMain {
     height: 100%;
-    width: 100%;
+    width: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
-
+    padding:0 20px 0 10px;
     background-color: $azul-fundo;
 }
 
@@ -18,24 +18,29 @@
 }
 
 .sidebarMenu {
-    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
     height: 60%;
-
+    width: auto;
     font-size: $font-size-sm;
 
     div {
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
+        font-weight: 500;
+        color: $azul-claro;
+        transition: all 0.2s ease;
 
         img {
-            margin-right: 5px;
+            margin-right: 15px;
         }
 
+        &:hover {
+            color: $azul-principal;
+        }
     }
 }

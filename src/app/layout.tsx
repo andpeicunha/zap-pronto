@@ -1,5 +1,5 @@
 "use client";
-import "./global.css";
+import "./styles/global.css";
 import { NextAuthProvider } from "./lib/providers";
 
 import { Inter } from "next/font/google";
