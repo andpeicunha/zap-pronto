@@ -15,7 +15,7 @@ export default async function Home() {
 			<main className={S.main}>
 				<Navbar />
 				<Image
-					src='/logotipo.png'
+					src='/images/logotipo.png'
 					width={577}
 					height={82}
 					alt={''}
