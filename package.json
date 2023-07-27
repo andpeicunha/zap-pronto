@@ -4,12 +4,18 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "prepare": "husky install",
     "dev": "next dev",
+    "lint": "eslint --max-warnings=0",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
     "test": "jest --no-cache",
-    "prepare": "husky install"
+    "test:silent": "jest --maxWorkers=50% --silent --coverage=false"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
   },
   "dependencies": {
     "-": "^0.0.1",
@@ -23,7 +29,7 @@
     "@types/node": "18.16.3",
     "@types/react": "18.2.5",
     "@types/react-dom": "18.2.3",
-    "babel-jest": "^29.5.0",
+    "babel-jest": "^29.6.2",
     "eslint": "8.39.0",
     "eslint-config-next": "13.4.0",
     "husky": "^8.0.3",
@@ -42,17 +48,19 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
-    "@babel/preset-env": "^7.22.2",
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
     "@babel/preset-typescript": "^7.21.5",
-    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^14.0.0",
     "@types/babel__core": "^7.20.1",
     "@types/jest": "^29.5.1",
     "@types/mocha": "^10.0.1",
     "@types/next-auth": "^3.15.0",
     "eslint-config-prettier": "^8.8.0",
-    "jest": "^29.5.0",
+    "jest": "^29.6.2",
     "jest-environment-jsdom": "^29.5.0",
+    "react-test-renderer": "^18.2.0",
     "ts-jest": "^29.1.0"
   }
 }

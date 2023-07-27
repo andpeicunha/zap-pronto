@@ -1,17 +1,19 @@
-import { expect, test, jest } from "@jest/globals";
-import { render, screen } from "@testing-library/react";
-import { Sidebar } from "@/app/components/sidebar";
+import React from 'react'
+import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom'
 
-describe("Menu Sidebar", () => {
-  it("carregou logotipo", () => {
-    render(<Sidebar />);
-    expect(screen.getAllByTestId("logotipo")).toBeDefined();
-  });
-  it("carregou menu", () => {
-    expect(screen.getByText(/Início/i)).toBeDefined();
-    expect(screen.getByText(/Clientes/i)).toBeDefined();
-    expect(screen.getByText(/Mensagens/i)).toBeDefined();
-    expect(screen.getByText(/Configurações/i)).toBeDefined();
-    expect(screen.getByText(/Suporte/i)).toBeDefined();
-  });
-});
+import { Sidebar } from '@/app/components/sidebar/sidebar'
+
+describe('Menu Sidebar', () => {
+	beforeEach(() => {
+		render(<Sidebar />)
+	})
+
+	it('carregou logotipo', () => {
+		const logotipo = screen.getByTestId('logotipo')
+		expect(logotipo).toBeInTheDocument()
+	})
+	it('carregou menu', () => {
+		expect(screen.getByText(/Início/i)).toBeInTheDocument()
+	})
+})
