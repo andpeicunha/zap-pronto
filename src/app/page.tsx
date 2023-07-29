@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { authOptions } from './api/auth/[...nextauth]/route'
 
 import { Navbar } from '@/app/components/navbar/navbar'
-import { Dashboard } from '@/app/components/dashboard'
+import { Dashboard } from './components/dashboard/dashboard'
 
 import S from './page.module.scss'
 
