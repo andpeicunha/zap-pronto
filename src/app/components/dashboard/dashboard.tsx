@@ -4,10 +4,11 @@ import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 
 import { Drawer, Tooltip } from '@mui/material'
-import { SheetJs } from '@/app/lib/importExcelSheet'
-import { Sidebar } from './sidebar/sidebar'
+import { ImportSheetJs } from '@/app/lib/importExcelSheet'
+import { Sidebar } from '../sidebar/sidebar'
 import S from './dashboard.module.scss'
-import { Navbar } from './navbar/navbar'
+import { Navbar } from '../navbar/navbar'
+import Client from './client/page'
 
 export const Dashboard = () => {
 	const { data: session } = useSession({ required: true })
@@ -45,10 +46,10 @@ export const Dashboard = () => {
 				<div className={S.header}>
 					<Navbar />
 				</div>
-
 				<div className={S.main}>
-					Main
-					<SheetJs />
+					Principal
+					<Client />
+					<ImportSheetJs />
 				</div>
 				<div className={open ? `${S.open}` : `${S.open} ${S.hidden}`}></div>
 			</div>
