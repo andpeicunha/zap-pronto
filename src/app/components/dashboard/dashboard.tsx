@@ -4,6 +4,7 @@ import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 
 import { Drawer, Tooltip } from '@mui/material'
+import { Button } from './button'
 import { ImportSheetJs } from '@/app/lib/importExcelSheet'
 import { Sidebar } from '../sidebar/sidebar'
 import S from './dashboard.module.scss'
@@ -47,9 +48,16 @@ export const Dashboard = () => {
 					<Navbar />
 				</div>
 				<div className={S.main}>
-					Principal
+					<span className='bg-blue-500 rounded-full'>Principal</span>
+					<Button
+						variant='primary'
+						size='medium'
+						onClick={handleDrawerOpen}
+					>
+						Botão
+					</Button>
 					<Client />
-					<ImportSheetJs />
+					{/* <ImportSheetJs /> */}
 				</div>
 				<div className={open ? `${S.open}` : `${S.open} ${S.hidden}`}></div>
 			</div>
