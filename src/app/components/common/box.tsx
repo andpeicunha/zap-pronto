@@ -1,25 +1,25 @@
-import type { ComponentProps } from 'react'
 import { colorsLookup, sizesLookup, baseClasses } from '@/app/theme/theme'
+import type { ComponentProps } from 'react'
 
 type ButtonVariant = keyof typeof colorsLookup
 type ButtonSize = keyof typeof sizesLookup
 
-interface ButtonProps extends ComponentProps<'button'> {
+interface ButtonProps extends ComponentProps<'div'> {
 	variant: ButtonVariant
 	size: ButtonSize
 }
 
-export const Button = (props: ButtonProps) => {
+export const Box = (props: ButtonProps) => {
 	const { variant, size, ...rest } = props
 	return (
-		<button
+		<div
 			{...rest}
-			className={`${baseClasses} ${colorsLookup[variant]} ${sizesLookup[size]}`}
+			className='bg-azul-principal-100 m-2 p-2 rounded-md'
 		/>
 	)
 }
 
-Button.defaultProps = {
+Box.defaultProps = {
 	variant: 'primary',
 	size: 'medium',
 }

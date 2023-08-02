@@ -1,38 +1,16 @@
-import React from 'react'
-
-import RegisterClients from './register/page'
+import { BoxCore } from '@/app/components/common/page'
 import { Box, Grid } from '@mui/material'
+import React from 'react'
 
 function Client() {
 	return (
-		<Box sx={{ flexGrow: 1 }}>
-			<Grid
-				container
-				spacing={2}
-			>
+		<Box>
+			<Grid container>
 				<Grid
 					item
-					xs={8}
+					xs={12}
 				>
-					<div>xs=8</div>
-				</Grid>
-				<Grid
-					item
-					xs={4}
-				>
-					<div>xs=4</div>
-				</Grid>
-				<Grid
-					item
-					xs={4}
-				>
-					<div>xs=4</div>
-				</Grid>
-				<Grid
-					item
-					xs={8}
-				>
-					<div>xs=8</div>
+					<BoxCore>Cadastro</BoxCore>
 				</Grid>
 			</Grid>
 		</Box>
