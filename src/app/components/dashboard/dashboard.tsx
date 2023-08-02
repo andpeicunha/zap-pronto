@@ -4,7 +4,7 @@ import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 
 import { Drawer, Tooltip } from '@mui/material'
-import { Button } from './button'
+import { Button } from '../common/button'
 import { ImportSheetJs } from '@/app/lib/importExcelSheet'
 import { Sidebar } from '../sidebar/sidebar'
 import S from './dashboard.module.scss'
