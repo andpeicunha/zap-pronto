@@ -1,25 +1,23 @@
-import { colorsLookup, sizesLookup, baseClasses } from '@/app/theme/theme'
-import type { ComponentProps } from 'react'
+import classnames from 'classnames'
+import { ComponentProps } from 'react'
 
-type ButtonVariant = keyof typeof colorsLookup
-type ButtonSize = keyof typeof sizesLookup
+type ButtonVariant = {
+	size: 'sm' | 'md' | 'lg'
+	bgColor: string
+	bgHover: string
+	textColor: string
+} & ComponentProps<'button'>
 
-interface ButtonProps extends ComponentProps<'button'> {
-	variant: ButtonVariant
-	size: ButtonSize
-}
-
-export const Button = (props: ButtonProps) => {
-	const { variant, size, ...rest } = props
+export function Button(props: ButtonVariant) {
+	const { bgColor, textColor, size, bgHover, ...buttonProps } = props
 	return (
 		<button
-			{...rest}
-			className={`${baseClasses} ${colorsLookup[variant]} ${sizesLookup[size]}`}
-		/>
+			{...buttonProps}
+			className={classnames(
+				'bg-${bgColor} text-${textColor} text-${size} py-2 px-4 rounded'
+			)}
+		>
+			{props.name}
+		</button>
 	)
-}
-
-Button.defaultProps = {
-	variant: 'primary',
-	size: 'medium',
 }

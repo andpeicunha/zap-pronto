@@ -1,6 +1,7 @@
-import { BoxCore } from '@/app/components/common/page'
 import { Box, Grid } from '@mui/material'
 import React from 'react'
+
+import RegisterClients from './register/page'
 
 function Client() {
 	return (
@@ -10,7 +11,7 @@ function Client() {
 					item
 					xs={12}
 				>
-					<BoxCore>Cadastro</BoxCore>
+					<RegisterClients />
 				</Grid>
 			</Grid>
 		</Box>

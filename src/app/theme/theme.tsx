@@ -17,22 +17,30 @@ export const THEME = {
 	},
 }
 
-const baseClasses = 'rounded-md font-medium focus:outline-none'
 
+const textSM = 'text-sm'
+const textMD = 'text-md'
+const textLG = 'text-lg'
+const textXL = 'text-xl'
+const text2XL = 'text-2xl'
+
+
+
+
+const textSize = {
+	sm: 'sm',
+	base: 'base',
+	lg: 'lg',
+	xl: 'xl',
+	xxl: '2xl',
+}
 const colorsLookup = {
-	primary:
-		'bg-cyan-500 text-white shadow-lg hover:bg-cyan-400 focus:bg-cyan-400 focus:ring-cyan-500',
-	secondary:
-		'bg-slate-200 text-slate-800 shadow hover:bg-slate-300 focus:bg-slate-300 focus:ring-slate-500',
-	danger:
-		'bg-red-500 text-white shadow-lg uppercase tracking-wider hover:bg-red-400 focus:bg-red-400 focus:ring-red-500',
-	text: 'text-slate-700 uppercase underline hover:text-slate-600 hover:bg-slate-900/5 focus:text-slate-600 focus:ring-slate-500',
+	'bg-azul-principal-light': 'bg-azul-principal-light',
+	'bg-azul-principal-medium': 'bg-azul-principal-medium',
+	'bg-azul-principal-dark': 'bg-azul-principal-dark',
+	'bg-gray-bluish-light': 'bg-gray-bluish-light',
+	'bg-gray-bluish-medium': 'bg-gray-bluish-medium',
+	'bg-gray-bluish-dark': 'bg-gray-bluish-dark',
 }
 
-const sizesLookup = {
-	small: 'px-3 py-1.5 text-sm focus:ring-2 focus:ring-offset-1',
-	medium: 'px-5 py-3 focus:ring-2 focus:ring-offset-2',
-	large: 'px-8 py-4 text-lg focus:ring focus:ring-offset-2',
-}
-
-export { baseClasses, colorsLookup, sizesLookup }
+export { colorsLookup, textSize }
