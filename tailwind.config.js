@@ -1,11 +1,27 @@
 module.exports = {
   theme: {
     extend: {
+      size: {
+        sm: '0.75rem',
+      },
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
-        'azul-principal-100': '#CCE8D8',
-        'azul-principal-200': '#161E54',
+        bluePrincipal: {
+          'light': '#5f73ff',
+          'medium': '#232f83',
+          'dark': '#161e54',
+        },
+        gray: {
+          light: '#E0E0E0',
+          medium: '#D9D9D9',
+          dark: '#9E9E9E',
+        },
+        grayBluish: {
+          light: '#A2B4C5',
+          medium: '#8B9AAE',
+          dark: '#5f73ff',
+        }
       },
     },
   },

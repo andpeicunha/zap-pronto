@@ -48,14 +48,6 @@ export const Dashboard = () => {
 					<Navbar />
 				</div>
 				<div className={S.main}>
-					<span className='bg-blue-500 rounded-full'>Principal</span>
-					<Button
-						variant='primary'
-						size='medium'
-						onClick={handleDrawerOpen}
-					>
-						Botão
-					</Button>
 					<Client />
 					{/* <ImportSheetJs /> */}
 				</div>
