@@ -1,15 +1,15 @@
 'use client'
-import React from 'react'
+import { ImportSheetJs } from '@/app/lib/importExcelSheet'
+import { Drawer, Tooltip } from '@mui/material'
 import { useSession } from 'next-auth/react'
 import Image from 'next/image'
+import React from 'react'
 
-import { Drawer, Tooltip } from '@mui/material'
-import { Button } from '../common/button'
-import { ImportSheetJs } from '@/app/lib/importExcelSheet'
-import { Sidebar } from '../sidebar/sidebar'
-import S from './dashboard.module.scss'
+import { Button } from '../core/button/page'
 import { Navbar } from '../navbar/navbar'
+import { Sidebar } from '../sidebar/sidebar'
 import Client from './client/page'
+import S from './dashboard.module.scss'
 
 export const Dashboard = () => {
 	const { data: session } = useSession({ required: true })

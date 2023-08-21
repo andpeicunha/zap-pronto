@@ -12,7 +12,7 @@ export const Box = (props: ButtonProps) => {
 	return (
 		<div
 			{...rest}
-			className={`${variant} m-2 p-2 rounded-md flex flex-col`}
+			className={`bg-slate-300 m-2 p-2 rounded-md flex flex-col`}
 		>
 			{props.children}
 		</div>

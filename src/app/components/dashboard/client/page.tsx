@@ -1,7 +1,7 @@
 import { Box, Grid } from '@mui/material'
 import React from 'react'
 
-import RegisterClients from './register/page'
+import RegisterClients from '../register/singleContact/page'
 
 function Client() {
 	return (
