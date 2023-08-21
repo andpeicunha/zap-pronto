@@ -1,4 +1,4 @@
-import { BoxCore, Button, TitleBox } from '@/app/components/common/page'
+import { BoxCore, Button, TitleBox } from '@/app/components/page'
 import React from 'react'
 
 function RegisterClients() {
@@ -6,7 +6,7 @@ function RegisterClients() {
 		<BoxCore variant='bg-azul-principal-light'>
 			<TitleBox textSize='sm'>Cadastro de Contatos</TitleBox>
 			<Button
-				name='Cadastrar Vários Contatos'
+				name='Cadastrar Contato'
 				type='submit'
 				data-testid='button:register-multiples-contacts'
 				size='lg'

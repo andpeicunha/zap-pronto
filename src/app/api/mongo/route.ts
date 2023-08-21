@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
 import { connectMongo } from "@/app/lib/mongoose";
-import UserModel from "../../models/user.model";
+import UserModel from "../../lib/models/user.model";
 
 // ----------------------------------------------------------------------
 

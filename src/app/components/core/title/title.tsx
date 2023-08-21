@@ -1,8 +1,7 @@
+import classnames from 'classnames'
 import type { ComponentProps } from 'react'
-import classnames from 'classnames';
 
-
-export const TitleBox = (props: ButtonProps) => {
+export const TitleBox = (props: any) => {
 	const { variant, textSize, ...rest } = props
 	return (
 		<span
