@@ -1,10 +1,10 @@
 'use client'
-import React from 'react'
-import { useSession, signIn, signOut } from 'next-auth/react'
-
-import Menu from '@mui/material/Menu'
-import Style from './navbar.module.scss'
 import { Avatar, MenuItem, Skeleton } from '@mui/material'
+import Menu from '@mui/material/Menu'
+import { useSession, signIn, signOut } from 'next-auth/react'
+import React from 'react'
+
+import Style from './navbar.module.scss'
 
 export function Navbar(props: any) {
 	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
