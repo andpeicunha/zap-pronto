@@ -1,13 +1,8 @@
-import {
-  BoxCore,
-  Button,
-  TextField,
-  TitleBox,
-} from "@/app/components/core/page";
-import { personSchema } from "@/app/utils/form/zod/zodSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import React from "react";
-import { useForm } from "react-hook-form";
+import { BoxCore, Button, TextField, TitleBox } from '@/app/components/core/page';
+import { personSchema } from '@/app/utils/form/zod/zodSchema';
+import { zodResolver } from '@hookform/resolvers/zod';
+import React from 'react';
+import { useForm } from 'react-hook-form';
 
 function RegisterClients() {
   const {
@@ -24,19 +19,8 @@ function RegisterClients() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <TitleBox textSize="sm">Cadastro de Contatos</TitleBox>
 
-        <TextField
-          name="firstName"
-          required
-          register={register}
-          label="Nome"
-          messageError="Texto Erro"
-        />
-        <TextField
-          required
-          register={register}
-          label="Sobrenome"
-          name="lastName"
-        />
+        <TextField name="firstName" required register={register} label="Nome" messageError="Texto Erro" />
+        <TextField required register={register} label="Sobrenome" name="lastName" />
         <TextField required register={register} label="Whatsapp" name="phone" />
 
         <Button
@@ -44,9 +28,9 @@ function RegisterClients() {
           type="submit"
           data-testid="button:register-multiples-contacts"
           size="lg"
-          bgColor={""}
-          textColor={""}
-          bgHover={""}
+          bgColor={''}
+          textColor={''}
+          bgHover={''}
         />
       </form>
     </BoxCore>
