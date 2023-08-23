@@ -1,8 +1,9 @@
 import { BoxCore, Button, TextField, TitleBox } from '@/app/components/core/page';
+import { Input } from '@/app/components/core/textField/page';
 import { personSchema } from '@/app/utils/form/zod/zodSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { SubmitErrorHandler, useForm } from 'react-hook-form';
 
 function RegisterClients() {
   const {
@@ -10,18 +11,29 @@ function RegisterClients() {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm({ resolver: zodResolver(personSchema) });
+  } = useForm({ mode: 'all', resolver: zodResolver(personSchema) });
+
+  const onFormError: SubmitErrorHandler<any> = (e) => {
+    console.log(e);
+  };
 
   const onSubmit = (data: any) => console.log(data);
 
   return (
     <BoxCore variant="bg-gray-bluish-dark">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit, onFormError)}>
         <TitleBox textSize="sm">Cadastro de Contatos</TitleBox>
 
-        <TextField name="firstName" required register={register} label="Nome" messageError="Texto Erro" />
-        <TextField required register={register} label="Sobrenome" name="lastName" />
-        <TextField required register={register} label="Whatsapp" name="phone" />
+        <Input label="Nome" type="text" placeholder="Enter your name" name="name" errors={errors} register={register} />
+
+        <Input
+          label="Email"
+          type="email"
+          name="email"
+          placeholder="Enter your e-mail"
+          errors={errors}
+          register={register}
+        />
 
         <Button
           name="Cadastrar Contato"

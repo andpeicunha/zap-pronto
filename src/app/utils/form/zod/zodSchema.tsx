@@ -1,11 +1,10 @@
-import z from "zod";
+import z from 'zod';
 
 export const personSchema = z.object({
-  firstName: z.string().min(3).max(25).nonempty("Nome é um campo obrigatório"),
-  lastName: z
-    .string()
-    .min(3)
-    .max(25)
-    .nonempty("Sobrenome é um campo obrigatório"),
-  phone: z.string(),
+  name: z
+    .string({ required_error: 'Campo obrigatório' })
+    .min(3, 'Não pode ter menos que 3 letras')
+    .max(25, 'Não pode ser maior que 25 letras')
+    .nonempty('Nome é um campo obrigatório'),
+  email: z.string({ required_error: 'Campo obrigatório' }).min(3).max(25).nonempty('E-mail é um campo obrigatório'),
 });
