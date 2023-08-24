@@ -1,5 +1,4 @@
 import { BoxCore, Button, TextField, TitleBox } from '@/app/components/core/page';
-import { Input } from '@/app/components/core/textField/page';
 import { personSchema } from '@/app/utils/form/zod/zodSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import React from 'react';
@@ -24,9 +23,16 @@ function RegisterClients() {
       <form onSubmit={handleSubmit(onSubmit, onFormError)}>
         <TitleBox textSize="sm">Cadastro de Contatos</TitleBox>
 
-        <Input label="Nome" type="text" placeholder="Enter your name" name="name" errors={errors} register={register} />
+        <TextField
+          label="Nome"
+          type="text"
+          placeholder="Enter your name"
+          name="name"
+          errors={errors}
+          register={register}
+        />
 
-        <Input
+        <TextField
           label="Email"
           type="email"
           name="email"
