@@ -1,56 +1,58 @@
-import { BoxCore, Button, TextField, TitleBox } from '@/app/components/core/page'
-import { RegisterPerson } from '@/app/utils/form/zod/FormZod'
-import { zodResolver } from '@hookform/resolvers/zod'
-import React from 'react'
-import { useForm } from 'react-hook-form'
+import { BoxCore, Button, TextField, TitleBox } from '@/app/components/core/page';
+import { personSchema } from '@/app/utils/form/zod/zodSchema';
+import { zodResolver } from '@hookform/resolvers/zod';
+import React from 'react';
+import { SubmitErrorHandler, useForm } from 'react-hook-form';
 
 function RegisterClients() {
-	const {
-		register,
-		handleSubmit,
-		watch,
-		formState: { errors },
-	} = useForm<RegisterPerson>()
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm({ mode: 'all', resolver: zodResolver(personSchema) });
 
-	const onSubmit = (data: any) => console.log(data)
+  const onFormError: SubmitErrorHandler<any> = (e) => {
+    console.log(e);
+  };
 
-	return (
-		<BoxCore variant='bg-gray-bluish-dark'>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<TitleBox textSize='sm'>Cadastro de Contatos</TitleBox>
+  const onSubmit = (data: any) => console.log(data);
 
-				<TextField
-					name='firstName'
-					required
-					register={register}
-					label='Nome'
-					error='Texto Erro'
-				/>
-				<TextField
-					required
-					register={register}
-					label='Sobrenome'
-					name='lastName'
-				/>
-				<TextField
-					required
-					register={register}
-					label='Whatsapp'
-					name='phone'
-				/>
+  return (
+    <BoxCore variant="bg-gray-bluish-dark">
+      <form onSubmit={handleSubmit(onSubmit, onFormError)}>
+        <TitleBox textSize="sm">Cadastro de Contatos</TitleBox>
 
-				<Button
-					name='Cadastrar Contato'
-					type='submit'
-					data-testid='button:register-multiples-contacts'
-					size='lg'
-					bgColor={''}
-					textColor={''}
-					bgHover={''}
-				/>
-			</form>
-		</BoxCore>
-	)
+        <TextField
+          label="Nome"
+          type="text"
+          placeholder="Enter your name"
+          name="name"
+          errors={errors}
+          register={register}
+        />
+
+        <TextField
+          label="Email"
+          type="email"
+          name="email"
+          placeholder="Enter your e-mail"
+          errors={errors}
+          register={register}
+        />
+
+        <Button
+          name="Cadastrar Contato"
+          type="submit"
+          data-testid="button:register-multiples-contacts"
+          size="lg"
+          bgColor={''}
+          textColor={''}
+          bgHover={''}
+        />
+      </form>
+    </BoxCore>
+  );
 }
 
-export default RegisterClients
+export default RegisterClients;
