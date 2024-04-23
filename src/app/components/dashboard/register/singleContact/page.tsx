@@ -2,26 +2,35 @@ import { BoxCore, Button, TextField, TitleBox } from '@/app/components/core/page
 import { personSchema } from '@/app/utils/form/zod/zodSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import React from 'react';
-import { SubmitErrorHandler, useForm } from 'react-hook-form';
+import { type SubmitErrorHandler, useForm } from 'react-hook-form';
+
+interface FieldError {
+  type: string;
+  message: string;
+}
+
+interface FormErrors {
+  [key: string]: FieldError;
+}
 
 function RegisterClients() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm({ mode: 'all', resolver: zodResolver(personSchema) });
 
-  const onFormError: SubmitErrorHandler<any> = (e) => {
+  const onFormError: SubmitErrorHandler<FormErrors> = (e) => {
     console.log(e);
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => console.log(data);
 
   return (
     <BoxCore variant="bg-gray-bluish-dark">
       <form onSubmit={handleSubmit(onSubmit, onFormError)}>
-        <TitleBox textSize="sm">Cadastro de Contatos</TitleBox>
+        <TitleBox textSize="small">Cadastro de Contatos</TitleBox>
 
         <TextField
           label="Nome"
@@ -48,7 +57,6 @@ function RegisterClients() {
           size="lg"
           bgColor={''}
           textColor={''}
-          bgHover={''}
         />
       </form>
     </BoxCore>

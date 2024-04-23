@@ -17,16 +17,6 @@ export const THEME = {
 	},
 }
 
-
-const textSM = 'text-sm'
-const textMD = 'text-md'
-const textLG = 'text-lg'
-const textXL = 'text-xl'
-const text2XL = 'text-2xl'
-
-
-
-
 const textSize = {
 	sm: 'sm',
 	base: 'base',

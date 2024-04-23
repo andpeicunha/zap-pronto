@@ -1,11 +1,14 @@
-import NextAuth from "next-auth";
-import type { NextAuthOptions } from "next-auth";
+import type { NextApiHandler } from 'next';
+import NextAuth from 'next-auth';
+import type { NextAuthOptions } from 'next-auth';
+import GoogleProvider from 'next-auth/providers/google';
 
-import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
-import clientPromise from "@/app/lib/mongodb";
-
-import EmailProvider from "next-auth/providers/email";
-import GoogleProvider from "next-auth/providers/google";
+interface ResBody {
+  user: {
+    name: string;
+    email: string;
+  };
+}
 
 export const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
@@ -15,22 +18,6 @@ export const authOptions: NextAuthOptions = {
   //   signIn: "/auth/signin",
   // },
   providers: [
-    // EmailProvider({
-    //   server: {
-    //     host: process.env.EMAIL_SERVER_HOST,
-    //     port: process.env.EMAIL_SERVER_PORT,
-    //     auth: {
-    //       user: process.env.EMAIL_SERVER_USER,
-    //       pass: process.env.EMAIL_SERVER_PASSWORD,
-    //     },
-    //   },
-    //   from: process.env.EMAIL_FROM,
-    //   maxAge: 30 * 60, // 30 minutes
-    //   async generateVerificationToken() {
-    //     return "ABC123";
-    //   },
-    // }),
-
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
@@ -38,5 +25,5 @@ export const authOptions: NextAuthOptions = {
   ],
 };
 
-const handler = NextAuth(authOptions);
+const handler: NextApiHandler<ResBody> = NextAuth(authOptions);
 export { handler as GET, handler as POST };

@@ -1,15 +1,14 @@
 import classnames from 'classnames'
-import { ComponentProps } from 'react'
+import type { ComponentProps } from 'react';
 
 type ButtonVariant = {
-	size: 'sm' | 'md' | 'lg'
-	bgColor: string
-	bgHover: string
-	textColor: string
-} & ComponentProps<'button'>
+  size: 'sm' | 'md' | 'lg';
+  bgColor: string;
+  textColor: string;
+} & ComponentProps<'button'>;
 
 export function Button(props: ButtonVariant) {
-	const { bgColor, textColor, size, bgHover, ...buttonProps } = props
+	const { bgColor, textColor, size, ...buttonProps } = props;
 	return (
 		<button
 			{...buttonProps}
