@@ -1,9 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-
 import { connectMongo } from '@/app/lib/mongoose';
+import { NextApiRequest, NextApiResponse } from 'next';
 import UserModel from '../../lib/models/user.model';
-
-// ----------------------------------------------------------------------
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {

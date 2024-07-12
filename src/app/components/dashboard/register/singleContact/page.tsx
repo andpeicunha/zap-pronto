@@ -1,7 +1,6 @@
 import { BoxCore, Button, TextField, TitleBox } from '@/app/components/core/page';
 import { personSchema } from '@/app/utils/form/zod/zodSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
-import React from 'react';
 import { type SubmitErrorHandler, useForm } from 'react-hook-form';
 
 interface FieldError {
@@ -24,7 +23,6 @@ function RegisterClients() {
     console.log(e);
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => console.log(data);
 
   return (
