@@ -1,21 +1,17 @@
-import { Box, Grid } from '@mui/material'
-import React from 'react'
+import { Box, Grid } from '@mui/material';
 
-import RegisterClients from '../register/singleContact/page'
+import RegisterClients from '../register/singleContact/page';
 
 function Client() {
-	return (
-		<Box>
-			<Grid container>
-				<Grid
-					item
-					xs={12}
-				>
-					<RegisterClients />
-				</Grid>
-			</Grid>
-		</Box>
-	)
+  return (
+    <Box>
+      <Grid container>
+        <Grid item xs={12}>
+          <RegisterClients />
+        </Grid>
+      </Grid>
+    </Box>
+  );
 }
 
-export default Client
+export default Client;

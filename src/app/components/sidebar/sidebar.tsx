@@ -1,7 +1,6 @@
-"use client";
-import React from "react";
+'use client';
 import Image from 'next/image';
-import S from "./sidebar.module.scss";
+import S from './sidebar.module.scss';
 
 interface PropsSidebar {
   onClick: () => void;
