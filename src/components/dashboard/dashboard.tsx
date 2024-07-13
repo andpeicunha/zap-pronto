@@ -3,7 +3,7 @@ import { Drawer, Tooltip } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 
-import { Navbar } from '../navbar/navbar';
+import { NavBar } from '@/app/main/navBar/navBar';
 import { Sidebar } from '../sidebar/sidebar';
 import Client from './client/page';
 import S from './dashboard.module.scss';
@@ -35,7 +35,7 @@ export const Dashboard = () => {
         </Tooltip>
 
         <div className={S.header}>
-          <Navbar />
+          <NavBar />
         </div>
         <div className={S.main}>
           <Client />

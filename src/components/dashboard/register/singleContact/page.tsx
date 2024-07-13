@@ -1,5 +1,5 @@
-import { BoxCore, Button, TextField, TitleBox } from '@/app/components/core/page';
-import { personSchema } from '@/app/utils/form/zod/zodSchema';
+import { BoxCore, Button, TextField, Title } from '@/components/ui';
+import { personSchema } from '@/utils/form/zod/zodSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { type SubmitErrorHandler, useForm } from 'react-hook-form';
 
@@ -28,7 +28,7 @@ function RegisterClients() {
   return (
     <BoxCore variant="bg-gray-bluish-dark">
       <form onSubmit={handleSubmit(onSubmit, onFormError)}>
-        <TitleBox textSize="small">Cadastro de Contatos</TitleBox>
+        <Title size="small">Cadastro de Contatos</Title>
 
         <TextField
           label="Nome"
@@ -48,14 +48,7 @@ function RegisterClients() {
           register={register}
         />
 
-        <Button
-          name="Cadastrar Contato"
-          type="submit"
-          data-testid="button:register-multiples-contacts"
-          size="lg"
-          bgColor={''}
-          textColor={''}
-        />
+        <Button name="Cadastrar Contato" type="submit" data-testid="button:register-multiples-contacts" size="lg" />
       </form>
     </BoxCore>
   );

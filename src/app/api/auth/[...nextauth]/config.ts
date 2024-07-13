@@ -1,14 +1,7 @@
-import NextAuth from 'next-auth';
+import { NextAuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 
-interface ResBody {
-  user: {
-    name: string;
-    email: string;
-  };
-}
-
-const nextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   // adapter: MongoDBAdapter(clientPromise),
   // pages: {
@@ -22,7 +15,3 @@ const nextAuthOptions = {
     }),
   ],
 };
-
-const handler = NextAuth(nextAuthOptions);
-
-export { handler as GET, handler as POST, nextAuthOptions };

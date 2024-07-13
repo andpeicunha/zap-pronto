@@ -1,4 +1,4 @@
-import type { colorsLookup } from '@/app/theme/theme';
+import type { colorsLookup } from '@/styles/theme/theme';
 import type { ComponentProps } from 'react';
 
 type ButtonVariant = keyof typeof colorsLookup;

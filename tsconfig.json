@@ -32,7 +32,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/lib/mongodb.ts",
+    "src/lib/mongodb.ts",
     "src/app/api/insert.js"
   ],
   "exclude": ["node_modules"]
