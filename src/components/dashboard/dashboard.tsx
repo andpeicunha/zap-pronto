@@ -3,7 +3,7 @@ import { Drawer, Tooltip } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 
-import { Navbar } from '../navbar/navbar';
+import { Navbar } from '@/app/main';
 import { Sidebar } from '../sidebar/sidebar';
 import Client from './client/page';
 import S from './dashboard.module.scss';

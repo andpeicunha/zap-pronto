@@ -1,8 +1,8 @@
 'use client';
 import { Inter } from 'next/font/google';
-import { useForm, FormProvider } from 'react-hook-form';
+import { FormProvider, useForm } from 'react-hook-form';
 
-import { NextAuthProvider } from './lib/providers';
+import { NextAuthProvider } from '../lib/providers';
 
 import './globals.css';
 

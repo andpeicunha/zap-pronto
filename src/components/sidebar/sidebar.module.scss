@@ -1,0 +1,46 @@
+@import '@/styles/mixins';
+
+.sidebarMain {
+  height: 100%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 20px 0 10px;
+  background-color: $azul-fundo;
+}
+
+.logotipo {
+  padding-top: 2rem;
+  width: 140px;
+  height: auto;
+}
+
+.sidebarMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 60%;
+  width: auto;
+  font-size: $font-size-sm;
+
+  div {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: $azul-claro;
+    transition: all 0.2s ease;
+
+    img {
+      margin-right: 15px;
+    }
+
+    &:hover {
+      color: $azul-principal;
+    }
+  }
+}

@@ -2,8 +2,8 @@ import { getServerSession } from 'next-auth';
 import Image from 'next/image';
 import { authOptions } from './api/auth/[...nextauth]/route';
 
-import { Navbar } from '@/app/components/navbar/navbar';
-import { Dashboard } from './components/dashboard/dashboard';
+import { Navbar } from '@/app/main/';
+import { Dashboard } from '@/components/dashboard/dashboard';
 
 import S from './page.module.scss';
 
@@ -12,9 +12,16 @@ export default async function Home() {
 
   if (!session) {
     return (
-      <main className={S.main}>
+      <main className="flex flex-col h-screen w-screen justify-start align-middle">
         <Navbar />
-        <Image src="/images/logotipo.png" width={577} height={82} alt={''} priority className={S.imgLogo} />
+        <Image
+          src="/images/logotipo.png"
+          width={577}
+          height={82}
+          alt={'logotipo clientX'}
+          priority
+          className="bg-red-500"
+        />
       </main>
     );
   }

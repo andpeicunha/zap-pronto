@@ -1,8 +1,6 @@
-@import "@/app/styles/mixins";
+@import '@/styles/mixins';
 
-$cores-degrade: rgba(255, 255, 255, 1),
-rgba(255, 255, 255, 0.8),
-rgba(0, 0, 0, 0.6);
+$cores-degrade: rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.6);
 $direcao: to bottom;
 
 @function gradiente($cores, $direcao) {
@@ -10,11 +8,6 @@ $direcao: to bottom;
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  background: gradiente($cores-degrade, $direcao);
-  height: 100vh;
-
   .imgLogo {
     position: absolute;
     margin: auto;

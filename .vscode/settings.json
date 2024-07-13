@@ -1,4 +1,8 @@
 {
-	"workbench.colorTheme": "Default Dark Modern",
-	"css.customData": ["./.vscode/css-data.json"]
+  "workbench.colorTheme": "Default Dark Modern",
+  "css.customData": ["./.vscode/css-data.json"],
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ]
 }
