@@ -1,4 +1,4 @@
-import { Darker_Grotesque, Inter, Lora, Roboto } from 'next/font/google';
+import { Darker_Grotesque, Inter, Lato, Roboto } from 'next/font/google';
 
 export const roboto = Roboto({
   weight: ['400', '500', '700'],
@@ -20,8 +20,8 @@ export const inter = Inter({
   variable: '--font-inter',
 });
 
-export const lora = Lora({
+export const lora = Lato({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-lora',
+  weight: ['100', '300', '400', '700', '900'],
+  variable: '--font-lato',
 });

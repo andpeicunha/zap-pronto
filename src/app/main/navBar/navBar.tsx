@@ -1,12 +1,13 @@
 'use client';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
+import { cn } from '@/lib/utils';
 import { Avatar, MenuItem } from '@mui/material';
 import Menu from '@mui/material/Menu';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import React from 'react';
 
-export function Navbar() {
+export function NavBar({ className }: { className?: string }) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const { data: session, status } = useSession();
 
@@ -19,12 +20,12 @@ export function Navbar() {
   };
 
   return (
-    <section id="navbar-login" className="flex flex-row items-end justify-end w-screen h-auto p-1">
-      {status === 'loading' && <Skeleton className="w-10 h-10 rounded-full" />}
+    <section id="navbar-login" className={(cn('flex flex-row items-end justify-end w-screen h-auto p-1'), className)}>
+      {status === 'loading' && <Skeleton className="w-[150px] h-11 rounded-3xl mt-6" />}
 
       {!session && status != 'loading' && (
-        <Button size="lg" variant="default" onClick={() => signIn()}>
-          Fazer Login
+        <Button size="default" variant="default" className="rounded-3xl mt-6" onClick={() => signIn()}>
+          Começar Agora
         </Button>
       )}
 
