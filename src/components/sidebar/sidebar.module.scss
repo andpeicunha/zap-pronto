@@ -1,5 +1,3 @@
-@import '@/styles/mixins';
-
 .sidebarMain {
   height: 100%;
   width: auto;
@@ -8,7 +6,6 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: 0 20px 0 10px;
-  background-color: $azul-fundo;
 }
 
 .logotipo {
@@ -24,7 +21,6 @@
   align-items: flex-start;
   height: 60%;
   width: auto;
-  font-size: $font-size-sm;
 
   div {
     cursor: pointer;
@@ -32,7 +28,6 @@
     align-items: center;
     justify-content: center;
     font-weight: 500;
-    color: $azul-claro;
     transition: all 0.2s ease;
 
     img {
@@ -40,7 +35,6 @@
     }
 
     &:hover {
-      color: $azul-principal;
     }
   }
 }

@@ -5,6 +5,9 @@ const config = {
   content: ['./src/**/*.{ts,tsx}'],
   prefix: '',
   theme: {
+    fontFamily: {
+      'font-system': ['Inter'],
+    },
     container: {
       center: true,
       padding: '2rem',

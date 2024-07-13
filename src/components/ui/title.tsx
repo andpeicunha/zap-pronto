@@ -1,16 +1,27 @@
-import React, { type HTMLAttributes } from 'react';
+import { cva, type VariantProps } from 'class-variance-authority';
+import React from 'react';
 
-interface TitleBoxSpecificProps {
-  variant?: 'primary' | 'secondary';
-  textSize?: 'small' | 'medium' | 'large';
-}
+const variants = cva('text-gray-900 font-font-system font-extrabold leading-none tracking-tight', {
+  variants: {
+    type: {
+      h1: ['mb-4 text-4xl'],
+      h2: ['mb-4 text-2xl'],
+    },
+    size: {
+      small: ['text-sm', 'py-1', 'px-2'],
+      medium: ['text-base', 'py-2', 'px-4'],
+    },
+  },
+  defaultVariants: {
+    type: 'h1',
+    size: 'medium',
+  },
+});
 
-type TitleBoxProps = HTMLAttributes<HTMLSpanElement> & TitleBoxSpecificProps;
+export interface TitleProps
+  extends Omit<React.HTMLAttributes<HTMLHeadingElement>, 'type'>,
+    VariantProps<typeof variants> {}
 
-export const TitleBox = (props: TitleBoxProps) => {
-  const { variant, textSize, ...rest } = props;
-  const className = `bg-grayBluish-light m-2 p-2 rounded-md text-xs ${
-    variant === 'primary' ? 'text-primary' : 'text-secondary'
-  } ${textSize === 'small' ? 'text-xs' : textSize === 'medium' ? 'text-sm' : 'text-lg'}`;
-  return <span {...rest} className={className} />;
-};
+export const Title: React.FC<TitleProps> = ({ className, type, size, ...props }) => (
+  <span className={variants({ type, size, className })} {...props} />
+);
