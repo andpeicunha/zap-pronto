@@ -1,9 +1,8 @@
-import { getServerSession } from 'next-auth';
-import Image from 'next/image';
-import { authOptions } from './api/auth/[...nextauth]/route';
-
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { Navbar } from '@/app/main/';
 import { Dashboard } from '@/components/dashboard/dashboard';
+import { getServerSession } from 'next-auth';
+import Image from 'next/image';
 
 import S from './page.module.scss';
 
