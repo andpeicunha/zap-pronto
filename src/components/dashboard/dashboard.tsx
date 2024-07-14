@@ -1,15 +1,13 @@
 'use client';
-import { Drawer, Tooltip } from '@mui/material';
-import Image from 'next/image';
 import React from 'react';
 
-import { NavBar } from '@/app/main/navBar/navBar';
-import { Sidebar } from '../sidebar/sidebar';
-import Client from './client/page';
-import S from './dashboard.module.scss';
+import { LoginNavBar } from '@/app/main/navBar/loginNavBar';
+import { useSession } from 'next-auth/react';
+import { MenuSideBar } from '../sidebar/sidebar';
+import { Separator } from '../ui';
 
 export const Dashboard = () => {
-  // const { data: session } = useSession({ required: true });
+  const { data: session } = useSession({ required: true });
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -21,32 +19,20 @@ export const Dashboard = () => {
   };
 
   return (
-    <>
-      <div className={S.container} onClick={open ? handleDrawerClose : () => {}}>
-        <Tooltip title="Abrir Menu" arrow placement="right">
-          <Image
-            src="/images/icon-logo.png"
-            width={93}
-            height={57}
-            alt="Abrir Menu"
-            className={`${S.iconOpenMenu} ${open ? S.hidden : ''}`}
-            onClick={handleDrawerOpen}
-          />
-        </Tooltip>
-
-        <div className={S.header}>
-          <NavBar />
+    <section id="dash" className="flex h-screen">
+      <div className="bg-[#D1DFEB] w-[250px] h-auto">
+        <MenuSideBar onClick={handleDrawerClose} />
+      </div>
+      <div className="flex flex-col w-full h-full">
+        <div className="flex py-6 pr-[20px] w-full justify-end">
+          <LoginNavBar />
         </div>
-        <div className={S.main}>
-          <Client />
+        <Separator className="w-auto ml-[5%]" />
+        <div className="">
+          {/* <Client /> */}
           {/* <ImportSheetJs /> */}
         </div>
-        <div className={open ? `${S.open}` : `${S.open} ${S.hidden}`}></div>
       </div>
-
-      <Drawer variant="persistent" anchor="left" open={open} onClose={handleDrawerClose} className={S.drawerSidebar}>
-        <Sidebar onClick={handleDrawerClose} />
-      </Drawer>
-    </>
+    </section>
   );
 };
