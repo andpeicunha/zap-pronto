@@ -1,10 +1,10 @@
 'use client';
-import React from 'react';
-
-import { LoginNavBar } from '@/app/main/navBar/loginNavBar';
+import { LoginNavBar } from '@/app/main/dashboard/navBar/loginNavBar';
 import { useSession } from 'next-auth/react';
-import { MenuSideBar } from '../sidebar/sidebar';
-import { Separator } from '../ui';
+import React from 'react';
+import { Separator } from '../../../components/ui';
+import RegisterPanel from './mainDash';
+import { MenuSideBar } from './sidebar/sidebar';
 
 export const Dashboard = () => {
   const { data: session } = useSession({ required: true });
@@ -24,13 +24,10 @@ export const Dashboard = () => {
         <MenuSideBar onClick={handleDrawerClose} />
       </div>
       <div className="flex flex-col w-full h-full">
-        <div className="flex py-6 pr-[20px] w-full justify-end">
-          <LoginNavBar />
-        </div>
-        <Separator className="w-auto ml-[5%]" />
+        <LoginNavBar />
+        <Separator className="w-auto ml-10" />
         <div className="">
-          {/* <Client /> */}
-          {/* <ImportSheetJs /> */}
+          <RegisterPanel />
         </div>
       </div>
     </section>
