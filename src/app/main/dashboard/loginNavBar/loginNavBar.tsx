@@ -30,7 +30,7 @@ export function LoginNavBar({ className }: { className?: string }) {
   }
 
   return (
-    <section className={cn('flex py-6 pr-[40px] w-full justify-end', className)}>
+    <section className={cn('flex py-6 pr-[10px] w-full justify-end', className)}>
       <DropdownMenu>
         <Avatar>
           <AvatarImage src={session?.user?.image || ''} alt="@shadcn" />

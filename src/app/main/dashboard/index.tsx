@@ -1,9 +1,9 @@
 'use client';
-import { LoginNavBar } from '@/app/main/dashboard/navBar/loginNavBar';
+import { LoginNavBar } from '@/app/main/dashboard/loginNavBar/loginNavBar';
 import { useSession } from 'next-auth/react';
 import React from 'react';
 import { Separator } from '../../../components/ui';
-import RegisterPanel from './mainDash';
+import RegisterPanel from './registerPanel';
 import { MenuSideBar } from './sidebar/sidebar';
 
 export const Dashboard = () => {
@@ -20,7 +20,7 @@ export const Dashboard = () => {
 
   return (
     <section id="dash" className="flex h-screen">
-      <div className="bg-[#D1DFEB] w-[250px] h-auto">
+      <div className="bg-[#D1DFEB] rounded-r-xl w-[250px] h-auto">
         <MenuSideBar onClick={handleDrawerClose} />
       </div>
       <div className="flex flex-col w-full h-full">

@@ -30,11 +30,15 @@ const config = {
         },
         secondary: {
           DEFAULT: 'var(--secondary)',
-          foreground: 'var(--secondary-foregrond)',
+          foreground: 'var(--secondary-foreground)',
+        },
+        highlight: {
+          DEFAULT: 'var(--highlight)',
+          foreground: 'var(--highlight-foreground)',
         },
         destructive: {
           DEFAULT: 'var(--destructive)',
-          foreground: 'var(--destructive-foregrond)',
+          foreground: 'var(--destructive-foreground)',
         },
         muted: {
           DEFAULT: 'var(--muted)',
