@@ -1,4 +1,4 @@
-import { LoginNavBar } from '@/app/main/dashboard/navBar/loginNavBar';
+import { LoginNavBar } from '@/app/main/dashboard/loginNavBar/loginNavBar';
 import Image from 'next/image';
 
 import { Text } from '@/components/ui/title';
