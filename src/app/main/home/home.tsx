@@ -1,4 +1,4 @@
-import { NavBar } from '@/app/main/navBar/navBar';
+import { LoginNavBar } from '@/app/main/dashboard/navBar/loginNavBar';
 import Image from 'next/image';
 
 import { Text } from '@/components/ui/title';
@@ -26,7 +26,7 @@ export default async function Home() {
             para você e acompanhe os resultados em tempo real.
           </span>
         </Text>
-        <NavBar />
+        <LoginNavBar />
       </section>
       <div className="absolute md:-z-[0] max-lg:opacity-50 max-lg:right-[2%] max-lg:top-[320px] top-[120px] right-[60px]">
         <Image
