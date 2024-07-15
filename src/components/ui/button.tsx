@@ -18,7 +18,7 @@ const buttonVariants = cva(
       variant: {
         default: 'bg-primary hover:!bg-primary-foreground text-white',
         secondary: 'bg-secondary text-white hover:bg-secondary-foreground',
-        highlight: 'bg-highlight hover:!bg-highlight-foreground text-white font-medium',
+        highlight: 'bg-highlight hover:!bg-highlight-foreground text-primary font-medium',
         outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
         'icon-menu': '!justify-start text-primary [&_svg:only-of-type]:!ml-6 [&_svg:only-of-type]:!mr-4',
