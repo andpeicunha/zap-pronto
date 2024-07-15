@@ -1,9 +1,10 @@
-import { Avatar, AvatarFallback, AvatarImage } from './avatar';
-import { Button } from './button';
-import { Card } from './card';
-import { DropdownMenu } from './dropdown-menu';
-import { Separator } from './separator';
-import { Input as TextField } from './textField';
-import { Text } from './title';
-
-export { Avatar, AvatarFallback, AvatarImage, Button, Card, DropdownMenu, Separator, TextField, Text as Title };
+export { Avatar, AvatarFallback, AvatarImage } from './avatar';
+export { Button } from './button';
+export { Card } from './card';
+export { Dialog } from './dialog';
+export { DropdownMenu } from './dropdown-menu';
+export { Input } from './input';
+export { Label } from './label';
+export { Separator } from './separator';
+export { Input as TextField } from './textField';
+export { Text as Title } from './title';
