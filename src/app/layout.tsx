@@ -1,6 +1,6 @@
 'use client';
 
-import { NextAuthProvider } from '@/lib/providers';
+import { NextAuthProvider } from '@/app/providers';
 import { inter, lora, roboto } from '@/styles/fonts';
 import { FormProvider, useForm } from 'react-hook-form';
 import './globals.css';

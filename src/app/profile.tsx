@@ -1,8 +1,8 @@
 import { getServerSession } from 'next-auth';
-import { authOptions } from './api/auth/[...nextauth]/route';
+import { nextAuthOptions } from './api/auth/[...nextauth]/config';
 
 export default async function Home() {
-  const session = await getServerSession(authOptions);
+  const session = await getServerSession(nextAuthOptions);
   console.log(session);
 
   return (
