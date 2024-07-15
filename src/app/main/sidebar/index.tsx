@@ -1,7 +1,7 @@
 'use client';
+import { Button } from '@/components/ui';
 import { House, MessageSquareText, Users } from 'lucide-react';
 import Image from 'next/image';
-import { Button } from '../../../../components/ui';
 
 interface PropsSidebar {
   onClick?: () => void;

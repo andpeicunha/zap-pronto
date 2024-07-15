@@ -1,10 +1,10 @@
 'use client';
-import { LoginNavBar } from '@/app/main/dashboard/loginNavBar/loginNavBar';
+import { LoginNavBar } from '@/app/main/dashboard/loginTopBar/';
 import { useSession } from 'next-auth/react';
 import React from 'react';
 import { Separator } from '../../../components/ui';
+import { MenuSideBar } from '../sidebar';
 import RegisterPanel from './registerPanel';
-import { MenuSideBar } from './sidebar/sidebar';
 
 export const Dashboard = () => {
   const { data: session } = useSession({ required: true });
