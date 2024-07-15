@@ -1,0 +1,67 @@
+//// ------------------------------------------------------
+//// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+//// ------------------------------------------------------
+
+Table users {
+  id Int [pk, increment]
+  name String
+  email String [unique, not null]
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+  posts Message [not null]
+  profileId Profile
+  Leads Leads
+}
+
+Table Message {
+  id String [pk]
+  title String [not null]
+  content String
+  destId String [not null]
+  published Boolean [not null, default: false]
+  author users
+  authorId Int
+  lead Leads [not null]
+  leadId Int [unique, not null]
+  LeadMessage LeadMessage [not null]
+}
+
+Table Profile {
+  id Int [pk, increment]
+  bio String
+  phone String
+  instanciaId Int
+  user users [not null]
+  userId Int [unique, not null]
+}
+
+Table Leads {
+  id Int [pk, increment]
+  name String
+  phone String
+  user users [not null]
+  userId Int [unique, not null]
+  Message Message [not null]
+  LeadMessage LeadMessage [not null]
+}
+
+Table LeadMessage {
+  id Int [pk, increment]
+  messageId String [not null]
+  message Message [not null]
+  leadId Int [not null]
+  lead Leads [not null]
+  createdAt DateTime [default: `now()`, not null]
+}
+
+Ref: Message.authorId > users.id
+
+Ref: Message.leadId > Leads.id
+
+Ref: Profile.userId - users.id
+
+Ref: Leads.userId - users.id
+
+Ref: LeadMessage.messageId > Message.id
+
+Ref: LeadMessage.leadId > Leads.id

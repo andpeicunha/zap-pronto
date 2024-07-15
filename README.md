@@ -1,34 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
+# Getting Started
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Env. Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Next Auth
 
-## Learn More
+NEXTAUTH_SECRET=<br>
+GOOGLE_CLIENT_ID=<br>
+GOOGLE_CLIENT_SECRET=<br>
 
-To learn more about Next.js, take a look at the following resources:
+### Vercel Postgres with Prisma
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+POSTGRES_DATABASE="verceldb"<br>
+POSTGRES_HOST=<br>
+POSTGRES_PASSWORD=<br>
+POSTGRES_PRISMA_URL=<br>
+POSTGRES_URL=<br>
+POSTGRES_URL_NON_POOLING=<br>
+POSTGRES_URL_NO_SSL=<br>
+POSTGRES_USER="default"<br>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### WhatsApp API
 
-## Deploy on Vercel
+WHATSGW_APIKEY=<br>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Data Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![data structure design in dbdocs](./public/images/readme/data-structure.png 'Data Structure')
+
+To view the project's data structure, access the link below on DbDocs and use the indicated password.
+
+web: https://dbdocs.io/andrepeixoto/ClientX?view=table_structure<br>
+pass: Cl13ntX@QWpo!@
+
+[Access DbDiagram.IO](https://dbdiagram.io/d/ClientX-6694e6999939893daeefd7bb)
