@@ -3,11 +3,7 @@ import { Button } from '@/components/ui';
 import { House, MessageSquareText, Users } from 'lucide-react';
 import Image from 'next/image';
 
-interface PropsSidebar {
-  onClick?: () => void;
-}
-
-export const MenuSideBar = ({ onClick }: PropsSidebar) => {
+export const MenuSideBar = () => {
   return (
     <section id="menu-sidebar">
       <div className="w-full items-center">

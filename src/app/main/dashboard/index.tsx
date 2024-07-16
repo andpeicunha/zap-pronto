@@ -1,27 +1,19 @@
 'use client';
 import { LoginNavBar } from '@/app/main/dashboard/loginTopBar/';
-import { useSession } from 'next-auth/react';
-import React from 'react';
+import { fetchApi } from '@/utils/fetch';
+import useSWR from 'swr';
 import { Separator } from '../../../components/ui';
 import { MenuSideBar } from '../sidebar';
 import RegisterPanel from './registerPanel';
 
 export const Dashboard = () => {
-  const { data: session } = useSession({ required: true });
-  const [open, setOpen] = React.useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  const { data } = useSWR('userdb', () => fetchApi('user/getUserDb'));
+  console.log('data: ', data?.users); // TODO: Validate if the user has an instance
 
   return (
     <section id="dash" className="flex h-screen">
       <div className="bg-[#D1DFEB] rounded-r-xl w-[250px] h-auto">
-        <MenuSideBar onClick={handleDrawerClose} />
+        <MenuSideBar />
       </div>
       <div className="flex flex-col w-full h-full">
         <LoginNavBar />

@@ -1,5 +1,4 @@
 'use client';
-
 import { Button, Dialog, Input, Label } from '@/components/ui';
 import {
   DialogContent,
@@ -10,21 +9,20 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { useStore } from '@/store/useStore';
-import { useSession } from 'next-auth/react';
 import { useState } from 'react';
-import 'react-international-phone/style.css';
 import { z } from 'zod';
 
-function ModalFormRegisterNumber({ children }: { children: React.ReactNode }) {
+import 'react-international-phone/style.css';
+
+function ModalSendMessage({ children }: { children: React.ReactNode }) {
   const isModalVisible = useStore((state) => state.isModalVisible);
-  const { data } = useSession();
 
   const [errors, setErrors] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(false);
 
   const [firstName, setFirstName] = useState<string>('');
-  // const [phone, setPhone] = useState<string>('');
-  const phone = data?.user?.email;
+  const [phone, setPhone] = useState<string>('');
 
   const onSubmit = async (e: any) => {
     e.preventDefault();
@@ -50,7 +48,9 @@ function ModalFormRegisterNumber({ children }: { children: React.ReactNode }) {
         setErrors(errArr);
         throw err;
       }
+
       setErrors([]);
+      setSuccess(true);
     } catch (error) {
       console.error(error);
     } finally {
@@ -102,4 +102,4 @@ function ModalFormRegisterNumber({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default ModalFormRegisterNumber;
+export default ModalSendMessage;

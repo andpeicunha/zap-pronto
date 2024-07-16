@@ -1,6 +1,7 @@
 import { Text } from '@/components/ui/title';
 import CardRegisterPhone from './cardRegisterNumber';
 import CardScheduleMessage from './cardScheduleMessage';
+import CardSendMessage from './cardSendMessage';
 
 function RegisterPanel() {
   return (
@@ -10,6 +11,9 @@ function RegisterPanel() {
       </Text>
       <div className="col-span-full mt-6">
         <CardRegisterPhone />
+      </div>
+      <div className="col-span-full mt-6">
+        <CardSendMessage />
       </div>
       <div className="col-span-2">
         <CardScheduleMessage />

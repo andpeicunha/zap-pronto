@@ -1,18 +1,17 @@
-'use client';
 import { Button, Card } from '@/components/ui';
 import { CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Text } from '@/components/ui/title';
 import { useStore } from '@/store/useStore';
 
 import 'react-international-phone/style.css';
-import ModalFormRegisterNumber from './modalFormRegister';
+import ModalSendMessage from './modalSendMessage';
 
-function CardRegisterPhone() {
+function CardSendMessage() {
   const toogleModal = useStore((state) => state.toggleModal);
 
   return (
     <>
-      <ModalFormRegisterNumber>
+      <ModalSendMessage>
         <Card className="w-full">
           <CardHeader>
             <CardTitle className="text-lg">Cadastrar seu WhatsApp</CardTitle>
@@ -27,13 +26,16 @@ function CardRegisterPhone() {
               </Text>
             </div>
             <Button variant="highlight" onClick={toogleModal}>
-              Cadastrar WhatsApp
+              Envio Individual
+            </Button>
+            <Button variant="highlight" onClick={toogleModal}>
+              Envio em Lote
             </Button>
           </CardContent>
         </Card>
-      </ModalFormRegisterNumber>
+      </ModalSendMessage>
     </>
   );
 }
 
-export default CardRegisterPhone;
+export default CardSendMessage;
