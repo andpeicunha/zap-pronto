@@ -1,8 +1,11 @@
 {
-  "workbench.colorTheme": "Default Dark+",
-  "css.customData": ["./.vscode/css-data.json"],
-  "tailwindCSS.experimental.classRegex": [
-    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ]
+	"workbench.colorTheme": "Default Dark+",
+	"css.customData": ["./.vscode/css-data.json"],
+	"tailwindCSS.experimental.classRegex": [
+		["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+		["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+	],
+	"editor.codeActionsOnSave": {
+		"source.organizeImports.biome": "explicit"
+	}
 }
