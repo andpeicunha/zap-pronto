@@ -1,5 +1,5 @@
 {
-  "name": "clientx-sender",
+  "name": "zap-pronto",
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
@@ -7,6 +7,7 @@
     "prepare": "husky install",
     "dev": "next dev",
     "lint": "next lint",
+    "tsc": "tsc",
     "build": "next build",
     "start": "next start",
     "test": "jest --no-cache",
@@ -29,6 +30,7 @@
     "@types/react": "18.2.79",
     "@types/react-dom": "18.2.25",
     "@vercel/postgres": "^0.9.0",
+    "axios": "^1.7.2",
     "babel-jest": "29.7.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -46,6 +48,7 @@
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.4.5",
+    "winston": "^3.13.1",
     "zod": "^3.23.0",
     "zustand": "^4.5.4"
   },
