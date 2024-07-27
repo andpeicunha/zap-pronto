@@ -1,3 +1,4 @@
+import { handleListUsers } from '@/bff/controllers/handlers/user/handleUser';
 import prisma from '@/lib/prisma';
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -20,10 +21,5 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET() {
-  const users = await prisma.user.findMany();
-  console.log('users: ', users);
-
-  return NextResponse.json({
-    users: users,
-  });
+  return await handleListUsers();
 }
