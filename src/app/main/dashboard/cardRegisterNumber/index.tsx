@@ -1,13 +1,13 @@
-import { Button, Card } from '@/components/ui';
-import { CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Text } from '@/components/ui/title';
-import { useStore } from '@/store/useStore';
+import { Button, Card } from '@/components/ui'
+import { CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Text } from '@/components/ui/title'
+import { useStore } from '@/store/useStore'
 
-import 'react-international-phone/style.css';
-import ModalFormRegisterNumber from './modalFormRegister';
+import 'react-international-phone/style.css'
+import ModalFormRegisterNumber from './modalFormRegister'
 
 function CardRegisterPhone() {
-  const toogleModal = useStore((state) => state.toggleModal);
+  const toogleModal = useStore((state) => state.toggleModal)
 
   return (
     <>
@@ -32,7 +32,7 @@ function CardRegisterPhone() {
         </Card>
       </ModalFormRegisterNumber>
     </>
-  );
+  )
 }
 
-export default CardRegisterPhone;
+export default CardRegisterPhone

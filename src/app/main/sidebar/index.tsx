@@ -1,10 +1,10 @@
-'use client';
-import { Button } from '@/components/ui';
-import { House, MessageSquareText, Users } from 'lucide-react';
-import Image from 'next/image';
+'use client'
+import { Button } from '@/components/ui'
+import { House, MessageSquareText, Users } from 'lucide-react'
+import Image from 'next/image'
 
 interface PropsSidebar {
-  onClick?: () => void;
+  onClick?: () => void
 }
 
 export const MenuSideBar = ({ onClick }: PropsSidebar) => {
@@ -35,5 +35,5 @@ export const MenuSideBar = ({ onClick }: PropsSidebar) => {
         </Button>
       </div>
     </section>
-  );
-};
+  )
+}

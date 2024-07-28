@@ -1,4 +1,4 @@
-import { Button, Dialog, Input, Label } from '@/components/ui';
+import { Button, Dialog, Input, Label } from '@/components/ui'
 import {
   DialogContent,
   DialogDescription,
@@ -6,57 +6,57 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
-import { useStore } from '@/store/useStore';
-import { useState } from 'react';
-import { z } from 'zod';
+} from '@/components/ui/dialog'
+import { useStore } from '@/store/useStore'
+import { useState } from 'react'
+import { z } from 'zod'
 
-import 'react-international-phone/style.css';
+import 'react-international-phone/style.css'
 
 function ModalFormRegisterNumber({ children }: { children: React.ReactNode }) {
-  const isModalVisible = useStore((state) => state.isModalVisible);
-  const toogleModal = useStore((state) => state.toggleModal);
+  const isModalVisible = useStore((state) => state.isModalVisible)
+  const toogleModal = useStore((state) => state.toggleModal)
 
-  const [errors, setErrors] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [success, setSuccess] = useState<boolean>(false);
+  const [errors, setErrors] = useState<any[]>([])
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [success, setSuccess] = useState<boolean>(false)
 
-  const [firstName, setFirstName] = useState<string>('');
-  const [phone, setPhone] = useState<string>('');
+  const [firstName, setFirstName] = useState<string>('')
+  const [phone, setPhone] = useState<string>('')
 
   const onSubmit = async (e: any) => {
-    e.preventDefault();
-    setIsLoading(true);
+    e.preventDefault()
+    setIsLoading(true)
 
     try {
       const mySchema = z.object({
         firstName: z.string().min(3, { message: 'O nome precisa ter pelo menos 2 letras' }),
         phone: z.string().min(11, { message: 'Verifique seu número de telefone' }),
-      });
+      })
 
       const response = mySchema.safeParse({
         firstName: firstName,
         phone: phone,
-      });
+      })
 
       if (!response.success) {
-        let errArr: any[] = [];
-        const { errors: err } = response.error;
+        let errArr: any[] = []
+        const { errors: err } = response.error
         for (var i = 0; i < err.length; i++) {
-          errArr.push({ for: err[i].path[0], message: err[i].message });
+          errArr.push({ for: err[i].path[0], message: err[i].message })
         }
-        setErrors(errArr);
-        throw err;
+        setErrors(errArr)
+        throw err
       }
 
-      setErrors([]);
-      setSuccess(true);
+      setErrors([])
+      setSuccess(true)
     } catch (error) {
-      console.error(error);
+      console.error(error)
     } finally {
-      setIsLoading(false);
+      setIsLoading(false)
     }
-  };
+  }
 
   return (
     <>
@@ -99,7 +99,7 @@ function ModalFormRegisterNumber({ children }: { children: React.ReactNode }) {
         </DialogContent>
       </Dialog>
     </>
-  );
+  )
 }
 
-export default ModalFormRegisterNumber;
+export default ModalFormRegisterNumber

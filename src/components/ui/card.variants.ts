@@ -1,4 +1,4 @@
-import { cva, VariantProps } from 'class-variance-authority';
+import { VariantProps, cva } from 'class-variance-authority'
 
 export const cardHeaderVariants = cva('flex flex-col rounded-t-lg  space-y-2 px-6 py-3', {
   variants: {
@@ -11,8 +11,8 @@ export const cardHeaderVariants = cva('flex flex-col rounded-t-lg  space-y-2 px-
   defaultVariants: {
     variant: 'primary',
   },
-});
+})
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof cardHeaderVariants> {
-  asChild?: boolean;
+  asChild?: boolean
 }

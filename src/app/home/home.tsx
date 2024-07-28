@@ -1,7 +1,7 @@
-import { LoginNavBar } from '@/app/main/dashboard/loginTopBar/';
-import Image from 'next/image';
+import { LoginNavBar } from '@/app/main/dashboard/loginTopBar/'
+import Image from 'next/image'
 
-import { Text } from '@/components/ui/title';
+import { Text } from '@/components/ui/title'
 
 export default async function Home() {
   return (
@@ -39,5 +39,5 @@ export default async function Home() {
         />
       </div>
     </main>
-  );
+  )
 }

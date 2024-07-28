@@ -1,12 +1,12 @@
-import { type DetailedHTMLProps, type InputHTMLAttributes } from 'react';
-import { type FieldErrors, type FieldValues, type Path, type UseFormRegister } from 'react-hook-form';
+import { type DetailedHTMLProps, type InputHTMLAttributes } from 'react'
+import { type FieldErrors, type FieldValues, type Path, type UseFormRegister } from 'react-hook-form'
 
 interface InputProps<FormData extends FieldValues>
   extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
-  label: string;
-  name: Path<FormData>;
-  register: UseFormRegister<FormData>;
-  errors: FieldErrors<FormData>;
+  label: string
+  name: Path<FormData>
+  register: UseFormRegister<FormData>
+  errors: FieldErrors<FormData>
 }
 
 export const Input = <FormData extends FieldValues>({
@@ -16,7 +16,7 @@ export const Input = <FormData extends FieldValues>({
   register,
   ...rest
 }: InputProps<FormData>) => {
-  const error = errors?.[name]?.message as string | undefined;
+  const error = errors?.[name]?.message as string | undefined
 
   return (
     <>
@@ -32,5 +32,5 @@ export const Input = <FormData extends FieldValues>({
       />
       {error && <span className="text-xs text-red-500">{error}</span>}
     </>
-  );
-};
+  )
+}

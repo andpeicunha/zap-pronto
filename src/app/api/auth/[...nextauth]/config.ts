@@ -1,4 +1,4 @@
-import GoogleProvider from 'next-auth/providers/google';
+import GoogleProvider from 'next-auth/providers/google'
 
 export const nextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
@@ -13,4 +13,4 @@ export const nextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     }),
   ],
-};
+}

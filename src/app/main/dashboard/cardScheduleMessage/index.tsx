@@ -1,6 +1,6 @@
-import { Button, Card } from '@/components/ui';
-import { CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Text } from '@/components/ui/title';
+import { Button, Card } from '@/components/ui'
+import { CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Text } from '@/components/ui/title'
 
 function CardScheduleMessage() {
   return (
@@ -26,7 +26,7 @@ function CardScheduleMessage() {
         </Card>
       </CardContent>
     </Card>
-  );
+  )
 }
 
-export default CardScheduleMessage;
+export default CardScheduleMessage
