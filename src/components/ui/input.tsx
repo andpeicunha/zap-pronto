@@ -1,19 +1,19 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import ErrorMessage from '@/components/error/errorMessage';
-import { cn } from '@/utils';
-import { PhoneInput } from 'react-international-phone';
+import ErrorMessage from '@/components/error/errorMessage'
+import { cn } from '@/utils'
+import { PhoneInput } from 'react-international-phone'
 
 export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'error' | 'name'> {
-  isPhoneNumber?: boolean;
-  error: any[];
-  name: string;
+  isPhoneNumber?: boolean
+  error: any[]
+  name: string
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, isPhoneNumber = false, error, name, ...props }, ref) => {
-    console.log('name: ', name);
-    const [phone, setPhone] = React.useState<string>('');
+    console.log('name: ', name)
+    const [phone, setPhone] = React.useState<string>('')
 
     if (isPhoneNumber) {
       return (
@@ -30,7 +30,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           />
           <ErrorMessage error={error} name={name} className="col-span-full -mt-3 text-right" />
         </>
-      );
+      )
     }
 
     return (
@@ -47,9 +47,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         />
         <ErrorMessage ref={ref} error={error} name={name} className="col-span-full -mt-3 text-right" />
       </>
-    );
+    )
   },
-);
-Input.displayName = 'Input';
+)
+Input.displayName = 'Input'
 
-export { Input };
+export { Input }

@@ -1,6 +1,6 @@
-import { Text } from '@/components/ui/title';
-import CardRegisterPhone from './cardRegisterNumber';
-import CardScheduleMessage from './cardScheduleMessage';
+import { Text } from '@/components/ui/title'
+import CardRegisterPhone from './cardRegisterNumber'
+import CardScheduleMessage from './cardScheduleMessage'
 
 function RegisterPanel() {
   return (
@@ -15,7 +15,7 @@ function RegisterPanel() {
         <CardScheduleMessage />
       </div>
     </section>
-  );
+  )
 }
 
-export default RegisterPanel;
+export default RegisterPanel

@@ -1,22 +1,22 @@
-'use client';
-import { LoginNavBar } from '@/app/main/dashboard/loginTopBar/';
-import { useSession } from 'next-auth/react';
-import React from 'react';
-import { Separator } from '../../../components/ui';
-import { MenuSideBar } from '../sidebar';
-import RegisterPanel from './registerPanel';
+'use client'
+import { LoginNavBar } from '@/app/main/dashboard/loginTopBar/'
+import { useSession } from 'next-auth/react'
+import React from 'react'
+import { Separator } from '../../../components/ui'
+import { MenuSideBar } from '../sidebar'
+import RegisterPanel from './registerPanel'
 
 export const Dashboard = () => {
-  const { data: session } = useSession({ required: true });
-  const [open, setOpen] = React.useState(false);
+  const { data: session } = useSession({ required: true })
+  const [open, setOpen] = React.useState(false)
 
   const handleDrawerOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
 
   const handleDrawerClose = () => {
-    setOpen(false);
-  };
+    setOpen(false)
+  }
 
   return (
     <section id="dash" className="flex h-screen">
@@ -31,5 +31,5 @@ export const Dashboard = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

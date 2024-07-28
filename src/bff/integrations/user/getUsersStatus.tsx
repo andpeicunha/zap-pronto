@@ -1,11 +1,11 @@
-import { getLogger } from '@/utils/logger/serverSideLogger';
-import axios from 'axios';
+import { getLogger } from '@/utils/logger/serverSideLogger'
+import axios from 'axios'
 
 export async function getUserStatus() {
-  const logger = await getLogger();
+  const logger = await getLogger()
 
   try {
-    const URL = `https://app.whatsgw.com.br/api/WhatsGw/GetProfile`;
+    const URL = `https://app.whatsgw.com.br/api/WhatsGw/GetProfile`
 
     const options = {
       method: 'GET',
@@ -17,19 +17,19 @@ export async function getUserStatus() {
         apikey: '63c5872a-4395-418f-8e69-71eadec5c3c1',
         phone_number: '5511977373258',
       },
-    };
+    }
 
-    logger.info(`GET USER STATUS >> STARTING REQUEST`);
+    logger.info(`GET USER STATUS >> STARTING REQUEST`)
 
-    const req = await axios.request(options);
+    const req = await axios.request(options)
 
-    logger.info(`GET USER STATUS >> FINISH REQUEST`);
+    logger.info(`GET USER STATUS >> FINISH REQUEST`)
 
-    return req.data;
+    return req.data
   } catch (err) {
-    logger.info(`GET USER STATUS >> ERROR: ${err}`);
+    logger.info(`GET USER STATUS >> ERROR: ${err}`)
 
-    throw err;
+    throw err
   }
 }
 

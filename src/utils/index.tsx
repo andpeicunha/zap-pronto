@@ -1,1 +1,1 @@
-export { cn } from './twMerge/twMerge';
+export { cn } from './twMerge/twMerge'

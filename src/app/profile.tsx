@@ -1,9 +1,9 @@
-import { getServerSession } from 'next-auth';
-import { nextAuthOptions } from './api/auth/[...nextauth]/config';
+import { getServerSession } from 'next-auth'
+import { nextAuthOptions } from './api/auth/[...nextauth]/config'
 
 export default async function Home() {
-  const session = await getServerSession(nextAuthOptions);
-  console.log(session);
+  const session = await getServerSession(nextAuthOptions)
+  console.log(session)
 
   return (
     <section>
@@ -12,5 +12,5 @@ export default async function Home() {
         <pre>{JSON.stringify(session)}</pre>
       </div>
     </section>
-  );
+  )
 }
