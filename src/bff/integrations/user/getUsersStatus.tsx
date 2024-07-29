@@ -1,5 +1,5 @@
 import { getLogger } from '@/utils/logger/serverSideLogger'
-import axios from 'axios'
+import MOCK from './mock.getUsersStatus.json'
 
 export async function getUserStatus() {
   const logger = await getLogger()
@@ -21,7 +21,7 @@ export async function getUserStatus() {
 
     logger.info(`GET USER STATUS >> STARTING REQUEST`)
 
-    const req = await axios.request(options)
+    const req = MOCK // await axios.request(options)
 
     logger.info(`GET USER STATUS >> FINISH REQUEST`)
 
