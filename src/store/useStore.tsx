@@ -5,6 +5,8 @@ type State = {
   isModalVisible: boolean
   toggleModal: () => void
   currentPage: number
+  qrCodeData: string
+  setQrCodeData: (data: string) => void
 }
 
 type Action = {
@@ -23,5 +25,7 @@ export const useStore = create<State & Action>()(
     updateCurrentPage: (currentPage) => set(() => ({ currentPage: currentPage })),
     toggleModal: () => set((state) => ({ isModalVisible: !state.isModalVisible })),
     reset: () => set(initialState),
+    qrCodeData: '',
+    setQrCodeData: (data) => set({ qrCodeData: data }),
   })),
 )
