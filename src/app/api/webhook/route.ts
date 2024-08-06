@@ -1,3 +1,4 @@
+import { useStore } from '@/store/useStore'
 import { NextRequest, NextResponse } from 'next/server'
 
 type EventData = {
@@ -13,6 +14,8 @@ export async function POST(req: NextRequest) {
 
   const qrcodeData = eventData.qrcode
   console.log(qrcodeData)
+
+  useStore.getState().setQrCodeData(qrcodeData)
 
   return new NextResponse(qrcodeData)
 }
