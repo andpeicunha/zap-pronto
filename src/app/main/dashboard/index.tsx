@@ -4,7 +4,7 @@ import { useSession } from 'next-auth/react'
 import React from 'react'
 import { Separator } from '../../../components/ui'
 import { MenuSideBar } from '../sidebar'
-import RegisterPanel from './registerPanel'
+import RegisterPanel from './RegisterPanel'
 
 export const Dashboard = () => {
   const { data: session } = useSession({ required: true })
